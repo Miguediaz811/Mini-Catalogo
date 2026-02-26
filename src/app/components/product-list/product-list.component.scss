@@ -1,8 +1,59 @@
+:host {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+div[ngfor] {
+  display: grid;
+}
+
+:host > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+div[style] {
+  background: #2c2c44 !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}
+
+div[style]:hover {
+  transform: translateY(-5px);
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4cafef;
+  margin: 10px 0;
+}
+
+.delete {
+  background: crimson;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.delete:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
 .empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 4rem 1rem;
-    color: gray;
-    font-size: 1.2rem;
-  }
-  
+  margin-left: 45vh;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ccc;
+}

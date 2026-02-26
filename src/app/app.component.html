@@ -1,21 +1,32 @@
-<div class="container">
-  <h1>Mini Catálogo</h1>
+<h1>Mini Catálogo</h1>
 
-  <div class="product-form">
-    <app-product-form (productCreated)="addProduct($event)"></app-product-form>
+<app-product-form
+  (productCreated)="addProduct($event)">
+</app-product-form>
+
+<div class="controls">
+
+  <div class="total">
+    <h3>Total: ${{ total }}</h3>
   </div>
 
-  <div class="controls">
-    <div class="total">Total: ${{ total }}</div>
-    <div class="filter-group">
-      <label>Precio máximo:</label>
-      <input type="number" [(ngModel)]="priceMax">
-    </div>
+  <div class="filter">
+    <label>Precio máximo:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="priceMax"
+      placeholder="Ej: 1000"
+    />
+  </div>
+
+  <div class="sort-buttons">
     <button (click)="orderAsc()">↑ Asc</button>
     <button (click)="orderDesc()">↓ Desc</button>
   </div>
-
-  <div class="product-list">
-    <app-product-list [products]="filterProducts" (productDelete)="deleteProduct($event)"></app-product-list>
-  </div>
+  
 </div>
+
+<app-product-list
+  [products]="filterProducts"
+  (productDelete)="deleteProduct($event)">
+</app-product-list>

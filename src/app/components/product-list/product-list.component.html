@@ -1,11 +1,17 @@
-<h2>Lista de Productos</h2>
+<h2 class="title">Lista de Productos</h2>
 
-<div *ngFor="let product of products" style="border: 1px solid #ccc; margin: 10px; padding: 15px; border-radius: 8px;">
-  <h3>{{ product.name }}</h3>
-  <div class="price">${{ product.price }}</div>
-  <button class="delete" (click)="eliminarProducto(product.id)">Eliminar</button>
+<div class="products-container">
+
+  <div *ngFor="let product of products" class="card">
+    <h3>{{ product.name }}</h3>
+    <div class="price">${{ product.price }}</div>
+    <button class="delete" (click)="deleteProduct(product.id)">
+      Eliminar
+    </button>
+  </div>
+
 </div>
 
 <div *ngIf="products.length === 0" class="empty-state">
-  <p>No hay productos aún. Agrega uno arriba.</p>
+  No hay productos aún. Agrega uno arriba.
 </div>
